@@ -1,23 +1,22 @@
 # China GDP Growth Analysis using Non-Linear Regression 📈🇨🇳
 
 ### 📌 **Overview**
-This project explores the historical trajectory of China's GDP using **Non-Linear Regression**. While linear models often fail to capture the multi-phase nature of economic development, this project utilizes a **Sigmoid (Logistic) Function** to model the transition from slow developmental stages to rapid industrial growth. The model successfully fits the **"S-curve"** characteristic often seen in emerging economies.
-
+This project explores the historical trajectory of China's GDP using advanced modeling techniques. While traditional linear models often fail to capture complex economic shifts, this project compares a Sigmoid (Logistic) Function against a Multi-Layer Perceptron (MLP) Neural Network. The analysis demonstrates how increased model complexity can better capture the nuances of rapid industrial growth and stabilization in emerging economies.
 ---
 
 ### 📊 **Model Performance**
-*   **Algorithm**: Non-Linear Regression (Sigmoid Model)
-*   **Optimization Tool**: `scipy.optimize.curve_fit`
-*   **Dataset Size**: 63 data points extracted from `china_gdp.csv`
-*   **R-Squared Accuracy**: **0.7897**
-
+Based on the final project summary, the Neural Network approach provides a near-perfect fit compared to the mathematical Sigmoid baseline.
+*   **Dataset Size**: 63 data points extracted from china_gdp.csv
+*   **Sigmoid $R^2$ Accuracy**: 0.8183
+*   **MLP Neural Net $R^2$**: 0.9904
+*   **Mean Squared Error (MSE)**: 0.000823
+*   **Neural Network Convergence**: Stopped at iteration 326
 ---
 
 ### 💡 **Key Insights**
-*   **Sigmoid Fitting**: The logistic growth model confirms that China’s economic expansion follows a distinct **"S-curve"**, showing a significant inflection point where growth accelerated exponentially before beginning to stabilize.
-*   **Data Normalization**: Since GDP values and Years differ by several orders of magnitude, the model utilizes **Min-Max Scaling** (0 to 1) to ensure the regression algorithm converges efficiently.
-*   **High Predictive Power**: An **R² of 0.79** indicates that the Sigmoid function is highly effective at capturing the non-linear dynamics of national economic growth compared to standard linear or low-degree polynomial models.
-
+*   **The Power of Complexity**: While the Sigmoid Model captures the general "S-curve" of growth, the MLP (Regularized) model (red dashed line in the plot) tracks the actual data points with significantly higher precision, achieving an $R^2$ of 0.99.
+*   **Data Normalization**: The model utilizes Min-Max Scaling (0 to 1) for both GDP and Years. This is crucial for the Neural Network to achieve convergence within 326 iterations and maintain a low MSE.
+*   **Inflection Points**: The visualization highlights that the MLP model better accounts for early-stage volatility and the specific curvature of China's economic acceleration compared to the more rigid Sigmoid baseline.
 ---
 
 ### 🛠️ **Tech Stack**
@@ -28,16 +27,18 @@ This project explores the historical trajectory of China's GDP using **Non-Linea
 ---
 
 ### 📁 **Repository Structure**
-*   **`Non_Linear_Regression.ipynb`**: Full source code including automated "Brute Force" data cleaning and modeling.
-*   **`china_gdp.csv`**: The historical dataset containing yearly GDP values.
-*   **`Screenshot 2026-05-01 at 12.55.53 PM.jpg`**: Visualization of the actual data points versus the Sigmoid fit curve.
+*   `Non_Linear_Regression.ipynb`: Full source code including automated "Brute Force" data cleaning and modeling.
+*   `china_gdp.csv`: The historical dataset containing yearly GDP values.
+*    '<img src="https://github.com/user-attachments/assets/5c186d6a-a65c-4be1-9b49-4d0d46cb4222" width="100%">'
+
+**Figure 1:** Visualization of the actual data points versus the Sigmoid and MLP fits.Visualization of the actual data points versus the Sigmoid fit curve.
 
 ---
 
 ### 🚀 **Future Enhancements**
-*   **Comparative Modeling**: Implementing Gompertz or Weibull functions to see if they offer a better fit for the later stages of economic maturity.
-*   **Economic Forecasting**: Using the optimized **$\beta_1$** and **$\beta_2$** parameters to project potential GDP figures for the next decade.
-*   **Multi-Country Analysis**: Applying this non-linear framework to other BRICS nations to compare industrialization speeds.
+*   **Hyperparameter Tuning**: Experimenting with different hidden layer architectures in the MLP to maintain high accuracy while ensuring the model generalizes well to future data.
+*   **Advanced Growth Functions**: Implementing Gompertz or Weibull functions as additional mathematical baselines to compare against the Sigmoid and MLP models.
+*   **Economic Forecasting**: Leveraging the trained Neural Network (which achieved a $0.99$ $R^2$) to project potential GDP figures for the next decade.
+*   **Multi-Country Analysis**: Applying this dual-model framework (Non-Linear Regression + Neural Networks) to other BRICS nations to compare industrialization speeds and model adaptability.
 
----
-**Created by Shivi Srivastava as part of a Machine Learning portfolio project.**
+Created by Shivi Srivastava as part of a Machine Learning portfolio project.
